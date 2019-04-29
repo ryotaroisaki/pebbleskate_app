@@ -1,0 +1,13 @@
+<h1><%= @memo.trick %> の編集ページ</h1>
+
+<%= form_for(@memo) do |f| %>
+  <%= f.label :trick, 'トリック' %>
+  <%= f.text_field :trick %>
+  
+  <%= f.label :content, 'コツ' %>
+  <%= f.text_field :content %>
+
+  <%= f.submit '更新' %>
+<% end %>
+
+<%= link_to '戻る', current_user %>
