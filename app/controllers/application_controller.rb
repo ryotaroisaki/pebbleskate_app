@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+ 
   protect_from_forgery with: :exception
   
   include SessionsHelper
@@ -13,5 +14,10 @@ class ApplicationController < ActionController::Base
   
   def counts(user)
     @count_memos = user.memos.count
+    
+    @count_liked = user.liked.count
   end
+  
+
+
 end

@@ -1,0 +1,19 @@
+
+  <% if current_user.liking?(video) %>
+    <%= form_for(current_user.favorites.find_by(video_id: video.id), html: { method: :delete }) do |f| %>
+      <%= hidden_field_tag :video_id, video.id %>
+      <%= button_tag( class: "btn btn-default btn-sm background-color-red") do %>
+      <%= content_tag :span, "Favorite", class: "glyphicon glyphicon-bookmark color-black border-color-black" %>
+    　<% end %>
+      
+  <% end %>
+    
+    
+  <% else %>
+    <%= form_for(current_user.favorites.build) do |f| %>
+      <%= hidden_field_tag :video_id, video.id %>
+      <%= button_tag( class: "btn btn-default btn-sm background-color-red") do %>
+    <%= content_tag :span, "Favorite", class: "glyphicon glyphicon-bookmark color-grey border-color-black" %>
+    　<% end %>
+    <% end %>
+  <% end %>

@@ -7,4 +7,21 @@ class User < ApplicationRecord
     has_secure_password
     
     has_many :memos
+    
+    has_many :favorites
+    has_many :liked, through: :favorites, source: :video
+    
+    def like(other_video)
+      self.favorites.find_or_create_by(video_id: other_video.id)
+    end
+
+    def unlike(other_video)
+      favorite = self.favorites.find_by(video_id: other_video.id)
+      favorite.destroy if favorite
+    end
+
+    def liking?(other_video)
+      self.liked.include?(other_video)
+    end
+  
 end

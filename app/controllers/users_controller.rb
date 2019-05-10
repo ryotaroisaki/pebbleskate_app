@@ -22,6 +22,13 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def library
+    @user = User.find(params[:id])
+    @liked = @user.liked.page(params[:page])
+    counts(@user)
+    
+  end  
 
   private
 

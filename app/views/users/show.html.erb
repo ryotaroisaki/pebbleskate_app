@@ -1,3 +1,7 @@
+ <div class="icon text-center">
+<%= link_to memos_path do %><span class="glyphicon glyphicon-pencil" style="font-size: 30px">TRICK MEMOS</span><% end %></li>
+</div>
+
 <div class="user-profile">
   <div class="icon text-center">
     <img src="<%= gravatar_url(@user, size: 100) %>" alt="" class="img-circle">
@@ -10,5 +14,6 @@
 
  <%= render 'memos/memos', memos: @memos %>
  
- 
-  <%= link_to add_path do %><span class="glyphicon glyphicon-plus" style="font-size: 30px"></span><% end %></li>
+ <div class="icon text-center">
+  <%= link_to add_path do %><span class="glyphicon glyphicon-plus color-black" style="font-size: 30px"></span><% end %></li>
+  </div>

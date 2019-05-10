@@ -7,16 +7,16 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <div class="col-xs-2">
-        <a class="navbar-left" href="/"> <span class="glyphicon glyphicon-home" style="font-size: 30px"></span></a>
+        <a class="navbar-left" href="/"> <span class="glyphicon glyphicon-home color-black" style="font-size: 30px"></span></a>
         </div>
-        <div class="col-xs-2">
-        <a class="navbar-left" href="/"> <span class="glyphicon glyphicon-search" style="font-size: 30px"></span></a>
+        <div class="col-xs-offset-1 col-xs-2">
+        <%= link_to genres_path do %><span class="glyphicon glyphicon-search color-black" style="font-size: 30px"></span><% end %>
         </div>
-        <div class="col-xs-2">
-        <a class="navbar-left" href="/"> <span class="glyphicon glyphicon-bookmark" style="font-size: 30px"></span></a>
+        <div class="col-xs-offset-1 col-xs-2">
+        <%= link_to library_user_path(current_user) do %><span class="glyphicon glyphicon-bookmark color-black" style="font-size: 30px"></span><% end %>
         </div>
-        <div class="col-xs-2">
-        <%= link_to current_user do %><span class="glyphicon glyphicon-user" style="font-size: 30px"></span><% end %>
+        <div class="col-xs-offset-1 col-xs-2">
+        <%= link_to current_user do %><span class="glyphicon glyphicon-user color-black" style="font-size: 30px"></span><% end %>
         </div>
 
       </div>

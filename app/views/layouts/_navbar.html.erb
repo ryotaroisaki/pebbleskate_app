@@ -16,13 +16,18 @@
         
        <% if logged_in? %>
       
-       
             <li>
-              <a href="#">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                アイテムを追加
-                </a>
-            </li>
+               <%= link_to genres_path do %><span class="glyphicon glyphicon-search"　aria-hidden="true">検索</span><% end %>
+            </li>  
+            
+            <li>
+               <%= link_to new_genre_path do %><span class="glyphicon glyphicon-plus"　aria-hidden="true">ジャンルを作成する</span><% end %>
+            </li>  
+              <li>
+               <%= link_to new_video_path do %><span class="glyphicon glyphicon-plus"　aria-hidden="true">動画を投稿する</span><% end %>
+             </li>
+  
+        
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

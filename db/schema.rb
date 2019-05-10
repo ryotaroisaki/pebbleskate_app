@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190428014049) do
+ActiveRecord::Schema.define(version: 20190510064948) do
+
+  create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
+    t.index ["video_id"], name: "index_favorites_on_video_id", using: :btree
+  end
+
+  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "memos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trick"
@@ -21,6 +36,15 @@ ActiveRecord::Schema.define(version: 20190428014049) do
     t.index ["user_id"], name: "index_memos_on_user_id", using: :btree
   end
 
+  create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "genre_id"
+    t.integer  "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_relationships_on_genre_id", using: :btree
+    t.index ["video_id"], name: "index_relationships_on_video_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
@@ -29,5 +53,20 @@ ActiveRecord::Schema.define(version: 20190428014049) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "iframe_url",    limit: 65535
+    t.string   "skater"
+    t.string   "trick"
+    t.string   "instagram_url"
+    t.string   "video_url"
+    t.string   "video_type"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "videos"
   add_foreign_key "memos", "users"
+  add_foreign_key "relationships", "genres"
+  add_foreign_key "relationships", "videos"
 end

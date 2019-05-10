@@ -1,4 +1,30 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+
+  get 'favorites/destroy'
+
+  get 'relationships/new'
+
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
+  get 'genres/index'
+
+  get 'genres/show'
+
+  get 'genres/new'
+
+  get 'genres/create'
+
+  get 'genres/destroy'
+
+  get 'videos/show'
+
+  get 'videos/new'
+
+  get 'videos/create'
+
   get 'memos/new'
 
   get 'memos/create'
@@ -21,6 +47,7 @@ Rails.application.routes.draw do
 
   root to: "toppages#index"
   
+  
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -28,11 +55,19 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create] do
   member do
-      get :drop
+      get :library
     end
   end
   
-  resources :memos, only: [:new, :create, :destroy, :edit, :update] 
+  resources :memos, only: [:index, :new, :create, :destroy, :edit, :update] 
+  
+  resources :genres, only: [:index, :show, :new, :create, :destroy]
+  
+  resources :videos, only: [:index, :show, :new, :create, :destroy]
+  
+  resources :relationships, only: [:new, :create, :destroy]
+  
+  resources :favorites, only: [:create, :destroy]
   
    get 'add', to: 'memos#new'
 end

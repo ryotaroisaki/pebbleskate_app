@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+    <div class="panel panel-default">
+      
+      <div class="panel-heading">動画を追加する</div>
+       
+      <div class="panel-body">
+         <%= form_for(@video) do |f| %>
+
+      <div class="form-group">
+        <%= f.label :iframe_url, 'Iframe_url' %>
+        <%= f.text_field :iframe_url, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :trick, 'Trick' %>
+        <%= f.text_field :trick, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :skater, 'Skater' %>
+        <%= f.text_field :skater, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :instagram_url, 'Instagram_url' %>
+        <%= f.text_field :instagram_url, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :video_url, 'Video_url' %>
+        <%= f.text_field :video_url, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :video_type, 'Video_type' %>
+        <%= f.password_field :video_type, class: 'form-control' %>
+      </div>
+      
+      <div>
+        <%= f.label :type_ids, 'Genres:' %>
+      <%= f.collection_check_boxes :type_ids, Genre.all, :id, :name %>
+     </div>
+    
+      
+      <%= f.submit 'POST', class: 'btn btn-success btn-block' %>
+      
+  <% end %>
+
+　 </div>
+    </div>
+  </div>
+</div>

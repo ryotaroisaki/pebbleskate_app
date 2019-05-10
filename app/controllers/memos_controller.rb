@@ -2,6 +2,10 @@ class MemosController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:destroy]
   
+  
+  def index 
+      @memos = Memo.all.order('created_at DESC').page(params[:page])
+  end  
   def new
       @memo = current_user.memos.build  # form_for 用
       @memos = current_user.memos.order('created_at DESC').page(params[:page])
