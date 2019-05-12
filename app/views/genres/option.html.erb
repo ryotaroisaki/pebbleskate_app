@@ -1,0 +1,14 @@
+<div class= "text-center">
+    <h1>どのジャンルに属するトリックを作成しますか？</h1>
+<div>
+
+<ul class="media-list">
+  <% @genres.each do |genre| %>
+    
+     
+      <div class="text-center">
+        <div>
+          <%= link_to genre.name, select_genre_path(genre.id) %>
+        </div>
+     </div>    
+    <% end %> 

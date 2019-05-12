@@ -12,12 +12,6 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def counts(user)
-    @count_memos = user.memos.count
-    
-    @count_liked = user.liked.count
-  end
   
-
-
+  
 end

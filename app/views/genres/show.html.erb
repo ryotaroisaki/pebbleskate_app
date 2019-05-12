@@ -1,5 +1,12 @@
 <div class="hidden-xs">
 
+<ul>
+<% Genre.all.each do  |g| %>
+   <li><%= g.name %>(<%= g.clips.count %>)</li>
+<% end %>
+</ul>
+
+
 <div class="center-item">
   
   
@@ -45,15 +52,15 @@
 <ul class="nav nav-tabs nav-justified">
  
 
- <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"><%= @count_flatground %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"><%= @count_ledge %></span><% end %></li>
  
- <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"><%= @count_rail %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"><%= @count_stairs %></span><% end %></li>
 
  
  
@@ -72,7 +79,7 @@
         </div>
   
   　　  　 <div>
-         <%= render 'favorites/like_button', video: video %>
+         <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
         </div> 
   　
         <div class= "details">
@@ -143,16 +150,17 @@
 <ul class="nav nav-tabs nav-justified">
  
 
- <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"><%= @count_flatground %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"><%= @count_ledge %></span><% end %></li>
  
- <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"><%= @count_rail %></span><% end %></li>
 
- <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"></span><% end %></li>
+ <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"><%= @count_stairs %></span><% end %></li>
 
+ 
  
  
  </ul>
@@ -170,7 +178,7 @@
           <iframe width="100%" height="194" src="<%= video.iframe_url.html_safe %>"></iframe>
         </div>
          <div>
-         <%= render 'favorites/like_button', video: video %>
+         <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
         </div> 
   
         <div class= "details">

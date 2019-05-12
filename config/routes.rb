@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'tricks/show'
+
+  get 'tricks/new'
+
+  get 'tricks/create'
+
+  get 'tricks/destroy'
+
   get 'favorites/create'
 
   get 'favorites/destroy'
@@ -61,7 +69,17 @@ Rails.application.routes.draw do
   
   resources :memos, only: [:index, :new, :create, :destroy, :edit, :update] 
   
-  resources :genres, only: [:index, :show, :new, :create, :destroy]
+  
+  get 'option', to: 'genres#option'
+  
+  resources :genres, only: [:index, :show, :new, :create, :destroy] do
+  member do
+      get :select
+      post :trickcreate
+    end
+  end
+  
+  resources :tricks, only: [:show, :new, :create, :destroy]
   
   resources :videos, only: [:index, :show, :new, :create, :destroy]
   

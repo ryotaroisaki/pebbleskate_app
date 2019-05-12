@@ -5,6 +5,7 @@ class MemosController < ApplicationController
   
   def index 
       @memos = Memo.all.order('created_at DESC').page(params[:page])
+      
   end  
   def new
       @memo = current_user.memos.build  # form_for 用

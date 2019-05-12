@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190510064948) do
+ActiveRecord::Schema.define(version: 20190511105940) do
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 20190510064948) do
     t.index ["video_id"], name: "index_relationships_on_video_id", using: :btree
   end
 
+  create_table "tricks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_tricks_on_genre_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
@@ -69,4 +77,5 @@ ActiveRecord::Schema.define(version: 20190510064948) do
   add_foreign_key "memos", "users"
   add_foreign_key "relationships", "genres"
   add_foreign_key "relationships", "videos"
+  add_foreign_key "tricks", "genres"
 end
