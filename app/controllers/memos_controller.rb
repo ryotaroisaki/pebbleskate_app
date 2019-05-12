@@ -7,6 +7,7 @@ class MemosController < ApplicationController
       @memos = Memo.all.order('created_at DESC').page(params[:page])
       
   end  
+  
   def new
       @memo = current_user.memos.build  # form_for 用
       @memos = current_user.memos.order('created_at DESC').page(params[:page])
@@ -23,7 +24,6 @@ class MemosController < ApplicationController
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'memos/new'
     end
-    
   end
 
   def destroy
@@ -47,7 +47,6 @@ class MemosController < ApplicationController
       render :edit
     end
   end
-  
   
    private
 

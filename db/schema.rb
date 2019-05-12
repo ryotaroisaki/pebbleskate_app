@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190511105940) do
+ActiveRecord::Schema.define(version: 20190512094701) do
+
+  create_table "connections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "trick_id"
+    t.integer  "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trick_id"], name: "index_connections_on_trick_id", using: :btree
+    t.index ["video_id"], name: "index_connections_on_video_id", using: :btree
+  end
 
   create_table "favorites", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
@@ -72,6 +81,8 @@ ActiveRecord::Schema.define(version: 20190511105940) do
     t.datetime "updated_at",                  null: false
   end
 
+  add_foreign_key "connections", "tricks"
+  add_foreign_key "connections", "videos"
   add_foreign_key "favorites", "users"
   add_foreign_key "favorites", "videos"
   add_foreign_key "memos", "users"
