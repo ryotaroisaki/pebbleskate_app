@@ -1,14 +1,28 @@
-<div class= "text-center">
-    <h1>どのジャンルに属するトリックを作成しますか？</h1>
-<div>
+<div class="text-center">
+<div class="row">
+   <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+<div class="panel panel-default">
+<div class= "panel-heading">どのジャンルに属するトリックを作成しますか？</div>
 
+<div class="panel-body">
+  
 <ul class="media-list">
   <% @genres.each do |genre| %>
     
      
-      <div class="text-center">
-        <div>
+      <li class="back">
           <%= link_to genre.name, select_genre_path(genre.id) %>
-        </div>
-     </div>    
-    <% end %> 
+     </li>    
+     
+  <% end %> 
+<div>  
+    
+      <%= link_to root_path do %><span class="glyphicon glyphicon-chevron-left"　aria-hidden="true">戻る</span><% end %>
+        
+       
+       
+        <%= link_to new_genre_path, class: 'btn btn-success btn-lg' do %><span class="glyphicon glyphicon-plus">ジャンルを追加する</span><% end %>
+      </div>
+    </div>
+  </div>
+</div>

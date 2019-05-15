@@ -5,15 +5,10 @@ class GenresController < ApplicationController
   end
 
   def show
+    @genres = Genre.all
     @genre = Genre.find(params[:id])
     @videos = @genre.clips.order('created_at DESC').page(params[:page])
-    
     @count_clips = Video.all.count
-    @count_flatground = Genre.find(1).clips.count
-    @count_ledge = Genre.find(2).clips.count
-    @count_rail = Genre.find(3).clips.count
-    @count_stairs = Genre.find(4).clips.count
-   
   end
 
   def new

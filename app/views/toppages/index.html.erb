@@ -1,225 +1,168 @@
- <% if logged_in? %>
+<% if logged_in? %>
 
-<div class="hidden-xs">
- 
- <div class="center-item">
-  
-  
-  <div>
-    <img src="../../images/flatground.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">FLATGROUND TRICKS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/ledge.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">LEDGE</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/clip.png" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">CLIP OF THE DAY</p>
-    </div>
-  </div>
-  
-  <div>
-    <img src="../../images/rail.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">RAILS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/stairs.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">STAIRS</p>
-  </div>
-  </div>
-   
-</div>
- 
- 
- <nav class="navbar  navbar-inverce">
- <ul class="nav nav-tabs nav-justified">
-  
- 
- <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
-
- <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"><%= @count_flatground %></span><% end %></li>
-
- <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"><%= @count_ledge %></span><% end %></li>
- 
- <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"><%= @count_rail %></span><% end %></li>
-
- <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"><%= @count_stairs %></span><% end %></li>
-
- 
- 
- 
- </ul>
-</nav>
-
-
-  <ul class="media-list">
-     
-     <% @videos.each do |video| %>
-     <%#= video.inspect %>
-    
-      <div class="text-center">
-        
+    <div class="hidden-xs">
+      <div class="center-item">
         <div>
-          <iframe width="560" height="315" src="<%= video.iframe_url %>;modestbranding=1;end=7;rel=0&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
+          <img src="../../images/flatground.jpg" width="350" height="200">
+            <p class="caption">FLATGROUND TRICKS</p>
         </div>
-        
-        <div>
-         <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
-        </div> 
   
-        <div class= "details">
-          <p><%= video.trick %></p>
-        </div>
-        
-         <div class= "details">
-          <p><%= video.skater %></p>
-        </div>
-        
-         <div class= "details">
-          <p><%= video.instagram_url %></p>
-        </div>
-        
         <div>
-            <%= video.video_url %>
+          <img src="../../images/ledge.jpg" width="350" height="200">
+            <p class="caption">LEDGE</p>
         </div>
+  
+        <div>
+          <img src="../../images/clip.png" width="350" height="200">
+            <p class="caption">CLIP OF THE DAY</p>
+        </div>
+  
+        <div>
+          <img src="../../images/rail.jpg" width="350" height="200">
+            <p class="caption">RAILS</p>
+        </div>
+  
+        <div>
+          <img src="../../images/stairs.jpg" width="350" height="200">
+            <p class="caption">STAIRS</p>
+        </div>
+     </div>
+ 
+ 
+      <nav class="navbar  navbar-inverce">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
+          <% @genres.each do |genre| %>
+            <li class="<%= 'active' if current_page?(genre_path(genre.id)) %>"><%= link_to genre_path(genre.id) do %><%= genre.name %> <span class="badge"><%= genre.clips.count %></span><% end %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+
+      <ul class="media-list">
         
-        
-         
-        
+         <% @videos.each do |video| %>
+         <%#= video.inspect %>
+          <div class="text-center">
+            <div>
+              <iframe width="560" height="315" src="<%= video.iframe_url %>;modestbranding=1;end=7;rel=0&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
+            </div>
+            
+            <div>
+             <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
+            </div> 
       
-       </div>
-      <% end %>
-     
-       
-    </ul>
-   
-</div>
-
-
-<div class="visible-xs">
-
-<div class="center-item">
-   <div>
-    <img src="../../images/flatground.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">FLATGROUND TRICKS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/ledge.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">LEDGE</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/clip.png" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">CLIP OF THE DAY</p>
-    </div>
-  </div>
-  
-  <div>
-    <img src="../../images/rail.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">RAIL</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/stairs.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">STAIRS</p>
-  </div>
-  </div>
-   
-  
-  
-</div>
-
-
-<nav class="navbar  navbar-inverce">
- <ul class="nav nav-tabs nav-justified">
-  
-
- <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
-
-
- <li class="<%= 'active' if current_page?(genre_path(id:1)) %>"><%= link_to genre_path(id:1) do %>FLATGROUND <span class="badge"><%= @count_flatground %></span><% end %></li>
-
- <li class="<%= 'active' if current_page?(genre_path(id:2)) %>"><%= link_to genre_path(id:2) do %>LEDGE <span class="badge"><%= @count_ledge %></span><% end %></li>
- 
- <li class="<%= 'active' if current_page?(genre_path(id:3)) %>"><%= link_to genre_path(id:3) do %>RAIL <span class="badge"><%= @count_rail %></span><% end %></li>
-
- <li class="<%= 'active' if current_page?(genre_path(id:4)) %>"><%= link_to genre_path(id:4) do %>STAIRS <span class="badge"><%= @count_stairs %></span><% end %></li>
-
- 
- 
- 
- </ul>
-</nav>
-
-  <ul class="media-list">
-      
-     <% @videos.each do |video| %>
-     <%#= video.inspect %>
-    
-      <div class="text-center">
-        <div>
-          <iframe width="100%" height="194" src="<%= video.iframe_url %>"></iframe>
-        </div>
-        
-        <div>
-         <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
-        </div> 
-        <div class= "details">
-          <p><%= video.trick %></p>
-        </div>
-         <div class= "details">
-          <p><%= video.skater %></p>
-        </div>
-         <div class= "details">
-          <p><%= video.instagram_url %></p>
-        </div>
-         <div class= "details">
-          <p><%= video.video_url %></p>
-         </div>
-       </div>
-      
-      <% end %>
-    </ul>
-</div>
-
-
- 
- <% else %>
-
-<% content_for :cover do %>
-  <div class="cover">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <h1 class="sample">スキルアップを目指す全スケートボーダーへ</h1>
-        
-        
-            <%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn btn-success btn-lg' %>
+            <div class= "details">
+              <p><%= video.trick %></p>
+            </div>
+            
+             <div class= "details">
+              <p><%= video.skater %></p>
+            </div>
+            
+             <div class= "details">
+              <p><%= video.instagram_url %></p>
+            </div>
+            
+            <div>
+                <%= video.video_url %>
+            </div>
+          </div>
         <% end %>
+        
+      </ul>
+      
+    </div>
+
+
+    <div class="visible-xs">
+      <div class="center-item">
+        <div>
+          <img src="../../images/flatground.jpg" width="200" height="100">
+            <p class="caption">FLATGROUND TRICKS</p>
+        </div>
+  
+        <div>
+          <img src="../../images/ledge.jpg" width="200" height="100">
+            <p class="caption">LEDGE</p>
+        </div>
+  
+        <div>
+          <img src="../../images/clip.png" width="200" height="100">
+            <p class="caption">CLIP OF THE DAY</p>
+        </div>
+  
+        <div>
+          <img src="../../images/rail.jpg" width="200" height="100">
+            <p class="caption">RAILS</p>
+        </div>
+  
+        <div>
+          <img src="../../images/stairs.jpg" width="200" height="100">
+            <p class="caption">STAIRS</p>
+        </div>
+     </div>
+ 
+ 
+      <nav class="navbar  navbar-inverce">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to root_path do %>CLIP OF THE DAY <span class="badge"><%= @count_clips %></span><% end %></li>
+          <% @genres.each do |genre| %>
+            <li class="<%= 'active' if current_page?(genre_path(genre.id)) %>"><%= link_to genre_path(genre.id) do %><%= genre.name %> <span class="badge"><%= genre.clips.count %></span><% end %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+
+      <ul class="media-list">
+        
+         <% @videos.each do |video| %>
+         <%#= video.inspect %>
+          <div class="text-center">
+            <div>
+              <iframe width="100%" height="194" src="<%= video.iframe_url %>;modestbranding=1;end=7;rel=0&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
+            </div>
+            
+            <div>
+             <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
+            </div> 
+      
+            <div class= "details">
+              <p><%= video.trick %></p>
+            </div>
+            
+             <div class= "details">
+              <p><%= video.skater %></p>
+            </div>
+            
+             <div class= "details">
+              <p><%= video.instagram_url %></p>
+            </div>
+            
+            <div>
+                <%= video.video_url %>
+            </div>
+          </div>
+        <% end %>
+        
+      </ul>
+      
+    </div>
+
+ 
+<% else %>
+
+  <% content_for :cover do %>
+    <div class="cover">
+      <div class="cover-inner">
+        <div class="cover-contents">
+          <h1 class="sample">スキルアップを目指す全スケートボーダーへ</h1>
+            <%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn btn-success btn-lg' %>
+  <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  
+    
 <% end %>
 
 
