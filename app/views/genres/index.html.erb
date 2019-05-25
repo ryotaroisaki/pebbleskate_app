@@ -1,123 +1,94 @@
-<div class="hidden-xs">
- 
- <div class="center-item">
-  
-  
-  <div>
-    <img src="../../images/flatground.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">FLATGROUND TRICKS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/ledge.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">LEDGE</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/clip.png" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">CLIP OF THE DAY</p>
-    </div>
-  </div>
-  
-  <div>
-    <img src="../../images/rail.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">RAILS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/stairs.jpg" width="350" height="200">
-    <div class="text-center">
-    <p class="caption">STAIRS</p>
-  </div>
-  </div>
-   
+
+
+<div class="text-center">
+  <span class="glyphicon glyphicon-search color-black" style="font-size: 30px"></span>
+    <p class = text>SEARCH</p>
 </div>
- 
-</div> 
+
+<div class="hidden-xs">
+    <div class="center-item">
+        <div>
+            <img src="../../images/flatground.jpg" width="350" height="200">
+            <p class="caption">FLATGROUND TRICKS</p>
+        </div>
+
+        <div>
+            <img src="../../images/ledge.jpg" width="350" height="200">
+            <p class="caption">LEDGE</p>
+        </div>
+
+        <div>
+            <img src="../../images/clip.png" width="350" height="200">
+            <p class="caption">CLIP OF THE DAY</p>
+        </div>
+
+        <div>
+            <img src="../../images/rail.jpg" width="350" height="200">
+            <p class="caption">RAILS</p>
+        </div>
+
+        <div>
+          <img src="../../images/stairs.jpg" width="350" height="200">
+          <p class="caption">STAIRS</p>
+        </div>
+    </div>
+</div>
 
 <div class="visible-xs">
+    <div class="center-item">
+        <div>
+            <img src="../../images/flatground.jpg" width="200" height="100">
+            <p class="caption">FLATGROUND TRICKS</p>
+        </div>
 
-<div class="center-item">
-    
-<div>
-    <img src="../../images/flatground.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">FLATGROUND TRICKS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/ledge.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">LEDGE</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/clip.png" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">CLIP OF THE DAY</p>
+        <div>
+            <img src="../../images/ledge.jpg" width="200" height="100">
+            <p class="caption">LEDGE</p>
+        </div>
+
+        <div>
+            <img src="../../images/clip.png" width="200" height="100">
+            <p class="caption">CLIP OF THE DAY</p>
+        </div>
+
+        <div>
+            <img src="../../images/rail.jpg" width="200" height="100">
+            <p class="caption">RAILS</p>
+        </div>
+
+        <div>
+          <img src="../../images/stairs.jpg" width="200" height="100">
+          <p class="caption">STAIRS</p>
+        </div>
     </div>
-  </div>
-  
-  <div>
-    <img src="../../images/rail.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">RAILS</p>
-  </div>
-  </div>
-  
-  <div>
-    <img src="../../images/stairs.jpg" width="200" height="100">
-    <div class="text-center">
-    <p class="caption">STAIRS</p>
-  </div>
-  </div>
-   
-</div>
 </div>
 
 <div class= "form1">
-<div class="col-xs-12 col-lg-offset-3 col-lg-6">
-<p>トリック検索</p>
-
-<div class="form-group">
-<%= form_tag(genres_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
-  
-  <%= submit_tag 'Search', :name => nil %>
-<% end %>
+    <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+        <p>トリック検索</p>
+        <div class="form-group">
+            <%= form_tag(genres_path,:method => 'get') do %>
+                <%= text_field_tag :search %>
+                <%= submit_tag 'Search', :name => nil %>
+            <% end %>
+        </div>
+        <ul>
+            <% @genres.each do |genre| %>
+                <li>
+                    <%= link_to genre.name, genre %>
+                </li>
+            <% end %>
+        </ul>
+    </div>
 </div>
 
-<ul>
-   <% @genres.each do |genre| %>
-  <li>
-     <%= link_to genre.name, genre %>
-  </li>
-  <% end %>
-</ul>
-
-</div>
-
-</div>
-
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-<!--<script src="/assets/slick.min.js"></script>-->
- 
 <script type="text/javascript">
 $(function() {
     $('.center-item').slick({
           infinite: false,
           dots:true,
           slidesToShow: 1,
-          centerMode: true, 
+          centerMode: true,
           centerPadding:'130px',
           variableWidth: true,
           autoplay:true,
@@ -131,7 +102,7 @@ $(function() {
                          centerMode: true,
                          centerPadding:'74px',
                          variableWidth: true,
-                         
+
                }
           }]
      });
@@ -141,5 +112,10 @@ $(function() {
 
 
 
-
- <!--<script src="https://www.youtube.com/iframe_api"></script>-->
+<script>
+  $(function(){
+    $('.text').children().addBack().contents().each(function() {
+      $(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="text-move">$&</span>'));
+    });
+  });
+</script>

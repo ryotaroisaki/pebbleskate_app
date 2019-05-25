@@ -23,7 +23,7 @@ border-color-black {
   border-width: 10px;
   border-style: solid;
   border-color: black;
-  
+
 }
 
 .color-grey {
@@ -37,7 +37,7 @@ border-color-black {
 
 .details{
   background-color:  white;
-  
+
 }
 
 .active {
@@ -61,32 +61,167 @@ footer {
   height: 40px;
 }
 
-/* cover */
-.cover {
-  margin-top: -20px;
-  margin-bottom: 20px;
-  width: 100%;
-  height: 400px;
-  background: url("/images/cover-skate.jpg") center center no-repeat;
-  background-size: cover;
-  opacity: 0.9;
-}
-.cover .cover-inner {
-  height: 100%;
-  margin: auto;
-  display: table;
-}
-.cover .cover-inner .cover-contents {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+
+
+.relative{
   position: relative;
+  display: none;
 }
-.cover .cover-inner .cover-contents h1 {
-  margin: 0 0 20px 0;
-  color: #fff;
+
+.absolute{
   font-weight: bold;
-  letter-spacing: 0.15em;
+  position: absolute;
+  left: 450px;
+  top: 300px;
+  color: white;
+  display: none;
+  z-index: 99999;
+
+}
+
+.buttonSpeed{
+  left: 680px;
+  top: 400px;
+  position: absolute;
+  display: none;
+  z-index: 99999;
 }
 
 
+/* 文字の動きのあるフェードイン */
+.wrap {
+  width: 768px;
+  margin: 200px auto 0;
+  text-align: center;
+}
+
+.text-move {
+  display: inline-block;
+  font-size: 36px;
+  animation: move .8s ease both;
+}
+
+@keyframes move {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.text-move:nth-child(1) {
+  animation-delay: 0;
+}
+.text-move:nth-child(2) {
+  animation-delay: .2s;
+}
+.text-move:nth-child(3) {
+  animation-delay: .4s;
+}
+.text-move:nth-child(4) {
+  animation-delay: .3s;
+}
+.text-move:nth-child(5) {
+  animation-delay: .5s;
+}
+.text-move:nth-child(6) {
+  animation-delay: .4s;
+}
+.text-move:nth-child(7) {
+  animation-delay: .5s;
+}
+.text-move:nth-child(8) {
+  animation-delay: .4s;
+}
+.text-move:nth-child(9) {
+  animation-delay: .5s;
+}
+.text-move:nth-child(10) {
+  animation-delay: .2s;
+}
+.text-move:nth-child(11) {
+  animation-delay: .4s;
+}
+.text-move:nth-child(12) {
+  animation-delay: .5s;
+}
+
+.text-move:nth-child(13) {
+  animation-delay: .5s;
+}
+
+.text-move:nth-child(14) {
+  animation-delay: .4s;
+}
+
+.text-move:nth-child(15) {
+  animation-delay: .5s;
+}
+
+.text-move:nth-child(16) {
+  animation-delay: .4s;
+}
+
+.text-move:nth-child(17) {
+  animation-delay: .5s;
+}
+
+.text-move:nth-child(18) {
+  animation-delay: .2s;
+}
+
+.text-move:nth-child(19) {
+  animation-delay: .4s;
+}
+
+.text-move:nth-child(20) {
+  animation-delay: .5s;
+}
+
+.text-move:nth-child(21) {
+  animation-delay: .3s;
+}
+
+
+
+@media screen and (max-width:640px){
+  .wrap {
+    width: 100%;
+  }
+}
+
+.text{
+  color: black;
+}
+
+
+/* スライドショー */
+aaaaa
+
+#viewer {
+    margin: 0 auto;
+    width: 900px;
+    height: 300px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#viewer img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}

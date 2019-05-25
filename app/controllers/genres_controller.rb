@@ -1,7 +1,7 @@
 class GenresController < ApplicationController
-  
+
   def index
-     @genres = Genre.search(params[:search])
+    @genres = Genre.search(params[:search])
   end
 
   def show
@@ -28,18 +28,17 @@ class GenresController < ApplicationController
 
   def destroy
   end
-  
+
   def option
     @genres = Genre.all
-  end  
-  
+  end
+
   def select
     @genre = Genre.find(params[:id])
     @trick = Trick.new
   end
-  
+
   def trickcreate
-    
     genre = Genre.find(params[:id])
     trick = genre.tricks.build(trick_params)
     if trick.save
@@ -51,14 +50,14 @@ class GenresController < ApplicationController
     end
   end
 
-  
-  
+
+
   private
-  
+
   def genre_params
     params.require(:genre).permit(:name)
   end
-  
+
   def trick_params
     params.require(:trick).permit(:name)
   end

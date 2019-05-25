@@ -1,13 +1,13 @@
 <div class="icon text-center">
-<aside class="col-md-12">
-      <%= form_for(@memo) do |f| %>
-        <div class="form-group">
-          <p>TRICK</p>
-          <%= f.text_area :trick, class: 'form-control', rows: 5 %>
-          <p>CONTENT</p>
-          <%= f.text_area :content, class: 'form-control', rows: 5 %>
-        </div>
-        <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
-      <% end %>
-</aside>
+    <aside class="col-md-12">
+        <%= form_for(@memo) do |f| %>
+            <div class="form-group">
+                <p>TRICK</p>
+                <%= f.text_area :trick, class: 'form-control', rows: 5 %>
+                <p>CONTENT</p>
+                <%= f.text_area :content, class: 'form-control', rows: 5 %>
+            </div>
+            <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
+        <% end %>
+    </aside>
 </div>

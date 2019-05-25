@@ -1,0 +1,88 @@
+HTML
+
+
+
+<% else %>
+
+  <% content_for :cover do %>
+    <section class="cover">
+      <div class="cover-inner">
+        <div class="cover-contents">
+          <h1 class="sample">スキルアップを目指す全スケートボーダーへ</h1>
+            <p class="buttonSpeed"><%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn btn-success btn-lg' %></p>
+  <% end %>
+        </div>
+      </div>
+    </section>
+
+<% end %>
+
+
+CSS
+
+/* cover */
+.cover {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 500px;
+  background: url("/images/cover-skate.jpg") center center no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  display: none;
+}
+.cover .cover-inner {
+  height: 100%;
+  margin: auto;
+  display: table;
+}
+.cover .cover-inner .cover-contents {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+.cover .cover-inner .cover-contents h1 {
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  display: none;
+}
+
+
+
+.relative{
+  position: relative;
+  display: none;
+}
+
+.absolute{
+  font-weight: bold;
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  color: white;
+  display: none;
+  z-index: 99999;
+
+}
+
+.buttonSpeed{
+  display: none;
+}
+
+javascript
+
+
+<script>
+$('h1').fadeIn(3000);
+</script>
+
+<script>
+$('section').fadeIn(2000);
+</script>
+
+<script>
+$('p').fadeIn(4500);
+</script>

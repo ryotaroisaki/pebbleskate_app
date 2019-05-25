@@ -1,0 +1,42 @@
+
+<div id="viewer">
+    <img src="/images/cover-skate.jpg" width="100%" height="800"/>
+    <img src="/images/cover-skate2.jpg" width="100%" height="800"/>
+    <img src="/images/cover-skate3.jpg" width="100%" height="800" />
+    <img src="/images/clip.png" width="100%" height="800" />
+    <img src="/images/cover-skate4.jpg" width="100%" height="800" />
+    <img src="/images/cover-skate5.jpg" width="100%" height="800" />
+</div>
+
+  <h1 class="absolute">スキルアップを目指す全スケートボーダーへ</h1>
+
+  <p class="buttonSpeed"><%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn btn-success btn-lg' %></p>
+
+
+
+<%# <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> %>
+<script type="text/javascript">
+$(function(){
+    const setImg = '#viewer';
+    const fadeSpeed = 1000;
+    const switchDelay = 3000;
+
+    $(setImg).children('img').css({opacity:'0'});
+    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+
+    setInterval(function(){
+        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+    },switchDelay);
+});
+</script>
+
+
+
+<script>
+$('h1').fadeIn(3000);
+</script>
+
+
+<script>
+$('p').fadeIn(4500);
+</script>

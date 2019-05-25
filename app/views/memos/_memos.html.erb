@@ -1,25 +1,23 @@
-
-
 <ul class="media-list">
-  <% memos.each do |memo| %>
-    
-     
-      <div class="text-center">
-        <div class= "memo">
-          <%= link_to memo.trick, user_path(memo.user) %>
-        </div>
-        <div class= details>
-          <p><%= memo.content %></p>
-        </div>
+
+    <% memos.each do |memo| %>
+        <div class="text-center">
+            <div class= "memo">
+                <%= link_to memo.trick, user_path(memo.user) %>
+            </div>
+            <div class= details>
+            <p><%= memo.content %></p>
+            </div>
+
         <% if current_user == memo.user %>
             <%= link_to memo, method: :delete, data: { confirm: "You sure?" } do %> <span class="glyphicon glyphicon-trash color-black" style="font-size: 30px"></span><% end %>
-          <% end %>
-          <% if current_user == memo.user %>
-            <%= link_to edit_memo_path(memo.id) do %> <span class="glyphicon glyphicon-pencil color-black" style="font-size: 30px"></span><% end %>
-          <% end %>
-      </div>
-  
-  <% end %>
-  <%= paginate memos %>
-</ul>
+        <% end %>
 
+        <% if current_user == memo.user %>
+            <%= link_to edit_memo_path(memo.id) do %> <span class="glyphicon glyphicon-pencil color-black" style="font-size: 30px"></span><% end %>
+        <% end %>
+    <% end %>
+
+    <%= paginate memos %>
+
+</ul>
