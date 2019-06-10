@@ -1,3 +1,322 @@
 // Place all the styles related to the toppages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "_color";
+
+
+/* スライドショー */
+
+
+#viewer {
+    margin: 0 auto;
+    width: 100%;
+    height: 800px;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+#viewer img {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+body {
+  margin : 0 ;
+}
+
+
+.register {
+  position: absolute;
+  top: 400px;
+  left: 697px;
+  z-index: 100;
+  background-color: $registercolor;
+  text-decoration: none;
+}
+
+.signup {
+  position: absolute;
+  top: 550px;
+  left: 738px;
+  z-index: 100;
+  background-color: #29c370;
+}
+
+.login {
+  position: absolute;
+  top: 500px;
+  left: 760px;
+  z-index: 100;
+  background-color: #d55555;
+}
+
+// SNSボタン
+@mixin sns($color,$left){
+  position: absolute;
+  top: 600px;
+  z-index: 100;
+  background-color: $color;
+  left: $left;
+}
+
+.facebook {
+  @include sns($facebookcolor,550px);
+}
+
+.twitter {
+  @include sns($twittercolor, 756px);
+}
+
+.instagram {
+  @include sns($instagramcolor,956px);
+}
+
+.description{
+  position: absolute;
+  top: 650px;
+  left: 620px;
+  z-index: 100;
+  color: white;
+  opacity: 0.7;
+  display: none;
+
+
+}
+
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
+.fa {
+  margin-right: 5px;
+}
+
+
+header {
+  height: 50px;
+  width: 100%;
+  background-color: rgba(34,49,52,0.9);
+  /* position :fixed; */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  z-index: 100;
+}
+
+.logo {
+  width: 124px;
+  margin-top: 20px;
+}
+
+
+/*モーダル*/
+.login-modal-wrapper, .signup-modal-wrapper, .facebook-modal-wrapper, .twitter-modal-wrapper, .instagram-modal-wrapper{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.moda {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+#signup-form, #login-form, #facebook-form, #twitter-form, #instagram-form{
+  width: 100%;
+  h1 {
+    color: #5f5d60;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  input {
+    width: 320px;
+    margin-left: 68px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    padding: 12px 12px;
+    border: 1px solid #d0d5d8;
+    border-radius: 5px;
+  }
+}
+
+
+#submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: #5dca88;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.lesson-wrapper {
+  position:absolute;
+  top: 900px;
+  height: 500px;
+  padding-bottom: 80px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.heading {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  color: #5f5d60;
+  h2 {
+    font-weight: normal;
+  }
+}
+
+
+/* lesson一覧部分のCSSを貼り付けてください */
+
+
+
+/*faq wrapper*/
+.faq-wrapper {
+  position:absolute;
+  top: 1400px;
+  background-color: #e6ecf0;
+  text-align: center;
+  padding-bottom: 80px;
+  color: #5f5d60;
+}
+
+#faq-list {
+  width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.message-wrapper {
+  position:absolute;
+  top: 2000px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.message-wrapper .heading h3 {
+  font-weight: normal;
+}
+
+
+.message {
+  padding: 15px 40px;
+  background-color: #5dca88;
+  cursor: pointer;
+  box-shadow: 0px 7px #1a7940;
+}
+
+.message:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+
+/* レッスンのCSS */
+.lesson {
+  float: left;
+  width: 25%;
+}
+
+.lesson-icon {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    color: white;
+  }
+}
+
+.text-contents {
+  margin: 3% auto;
+  width: 80%;
+  font-size: 20px;
+  color: #b3aeb5;
+  display: none;
+  /* displayプロパティをnoneにしてください */
+
+
+}
+
+.text-active{
+  display: block;
+}
+
+.center-item{
+  margin-top: 30px;
+}
+
+.close-modal{
+  left: 100px;
+}
+
+/* アコーディオン */
+
+.faq-list-item {
+  margin:10px;
+  border-bottom:1px solid #ccc;
+  position:relative;
+  cursor:pointer;
+  text-align: left;
+  h3 {
+    font-size: 14px;
+  }
+  span {
+    position:absolute;
+    top:0;
+    right:5px;
+    color:#ccc;
+    font-size:13px;
+  }
+}
+
+.answer {
+  font-size: 12px;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  display: none;
+
+}

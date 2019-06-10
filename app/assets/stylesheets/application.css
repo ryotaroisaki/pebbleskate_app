@@ -5,6 +5,7 @@
 
 /*@charset "utf-8";*/
 
+
 .font {
         font-size: 30px;
 }
@@ -74,8 +75,9 @@ footer {
   left: 450px;
   top: 300px;
   color: white;
+  opacity: 0.9;
   display: none;
-  z-index: 99999;
+  z-index: 100;
 
 }
 
@@ -84,7 +86,7 @@ footer {
   top: 400px;
   position: absolute;
   display: none;
-  z-index: 99999;
+  z-index: 100;
 }
 
 
@@ -198,26 +200,7 @@ footer {
 }
 
 
-/* スライドショー */
-aaaaa
-
-#viewer {
-    margin: 0 auto;
-    width: 900px;
-    height: 300px;
-    text-align: left;
-    overflow: hidden;
-    position: relative;
-}
-
-#viewer img {
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-
-
-
+/* footer */
 
 .bottom{
   position: fixed;

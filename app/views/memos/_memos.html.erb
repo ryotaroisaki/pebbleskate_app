@@ -2,10 +2,11 @@
 
     <% memos.each do |memo| %>
         <div class="text-center">
-            <div class= "memo">
-                <%= link_to memo.trick, user_path(memo.user) %>
+            <h3 class= "memo">
+                <%= link_to memo.trick, user_path(memo.user), class: 'trick' %>
             </div>
-            <div class= details>
+
+            <div class= "details">
             <p><%= memo.content %></p>
             </div>
 

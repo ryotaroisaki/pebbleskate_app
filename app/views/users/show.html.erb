@@ -1,3 +1,16 @@
+<% content_for :cover do %>
+  <section class="cover">
+    <div class="cover-inner">
+      <div class="cover-contents">
+        <h1 class="transparent">HOW TO SKATEBOARDING</h1>
+        <h1>トリックの習得に苦難していませんか？</h1>
+          <p><%= link_to 'YES', memos_path, class: 'btn btn-success btn-lg' %></p>
+
+      </div>
+    </div>
+  </section>
+<% end %>
+
 <div class="icon text-center">
         <%= link_to memos_path do %><span class="glyphicon glyphicon-pencil" style="font-size: 30px">TRICK MEMOS</span><% end %></li>
 </div>
@@ -12,10 +25,25 @@
     </div>
 </div>
 
-
  <%= render 'memos/memos', memos: @memos %>
 
 
 <div class="icon text-center">
     <%= link_to add_path do %><span class="glyphicon glyphicon-plus color-black" style="font-size: 30px"></span><% end %></li>
 </div>
+
+
+
+
+
+<script>
+$('h1').fadeIn(3000);
+</script>
+
+<script>
+$('section').fadeIn(2000);
+</script>
+
+<script>
+$('p').fadeIn(4500);
+</script>

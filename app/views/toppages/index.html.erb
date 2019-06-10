@@ -151,77 +151,228 @@
 
 <% else %>
 
-    <% content_for :cover do %>
+    <div class="facebook-modal-wrapper" id="facebook-modal">
+        <div class="moda">
+            <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+            </div>
 
-        <div id="viewer">
-            <img src="/images/cover-skate.jpg" width="100%" height="800"/>
-            <img src="/images/cover-skate2.jpg" width="100%" height="800"/>
-            <img src="/images/cover-skate3.jpg" width="100%" height="800" />
-            <img src="/images/clip.png" width="100%" height="800" />
-            <img src="/images/cover-skate4.jpg" width="100%" height="800" />
-            <img src="/images/cover-skate5.jpg" width="100%" height="800" />
+        <div id="facebook-form">
+
+            <h1><span class="fa fa-facebook"></span>Facebookで登録</h1>
+            <form action="#">
+                <input class="form-control" type="text" placeholder="Facebookメールアドレス">
+                <input class="form-control" type="password" placeholder="パスワード">
+                <div id="submit-btn">新規登録</div>
+            </form>
         </div>
+        </div>
+    </div>
 
-        <h1 class="absolute">スキルアップを目指す全スケートボーダーへ</h1>
-        <p class="buttonSpeed"><%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn btn-success btn-lg' %></p>
-    <% end %>
+    <div class="twitter-modal-wrapper" id="twitter-modal">
+        <div class="moda">
+            <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+            </div>
+
+        <div id="twitter-form">
+
+            <h1><span class="fa fa-twitter"></span>Twitterで登録</h1>
+            <form action="#">
+                <input class="form-control" type="text" placeholder="Twitterメールアドレス">
+                <input class="form-control" type="password" placeholder="パスワード">
+                <div id="submit-btn">新規登録</div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <div class="instagram-modal-wrapper" id="instagram-modal">
+        <div class="moda">
+            <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+            </div>
+
+        <div id="instagram-form">
+
+            <h1><span class="fa fa-instagram"></span>Instagramで登録</h1>
+            <form action="#">
+                <input class="form-control" type="text" placeholder="Instagramメールアドレス">
+                <input class="form-control" type="password" placeholder="パスワード">
+                <div id="submit-btn">新規登録</div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <div class="signup-modal-wrapper" id="signup-modal">
+        <div class="moda">
+            <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+            </div>
+
+        <div id="signup-form">
+            <h1><span class="fa fa-envelope"></span>Emailで新規登録</h1>
+
+            <%= form_for(@user) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, class: 'form-control', :placeholder => "お名前" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "パスワード(確認)"%>
+                </div>
+        </div>
+                <div class = "text-center">
+                    <%= f.submit '新規登録', id: 'submit-btn' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+
+
+
+    <div class="login-modal-wrapper" id="login-modal">
+        <div class="moda">
+            <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+            </div>
+
+            <div id="login-form">
+                <h1><span class="fa fa-user"></span>ログイン</h1>
+                <%= form_for(:session, url: login_path) do |f| %>
+                    <div class="form-group">
+                        <%= f.email_field :email, class: 'form-control', :placeholder => "登録メールアドレス" %>
+                    </div>
+
+                    <div class="form-group">
+                         <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード"%>
+                    </div>
+             </div>
+                     <%= f.submit 'ログイン', id: 'submit-btn' %>
+                 <% end %>
+        </div>
+    </div>
+
+
+
+
+<% content_for :cover do %>
+    <div id="viewer">
+        <img src="/images/cover-skate2.jpg" width="100%" height="800"/>
+        <img src="/images/clip.png" width="100%" height="800" />
+        <img src="/images/cover-skate3.jpg" width="100%" height="800" />
+        <img src="/images/cover-skate.jpg" width="100%" height="800"/>
+        <img src="/images/cover-skate4.jpg" width="100%" height="800" />
+        <img src="/images/cover-skate5.jpg" width="100%" height="800" />
+    </div>
+
+    <h1 class="absolute">スキルアップを目指す全スケートボーダーへ</h1>
+    <p class="buttonSpeed"><%= link_to 'PEBBLE SKATE CLIPSを始める', login_path, class: 'btn btn-success btn-lg' %></p>
+
+ <%# <%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn register' %>
+
+    <h1 class ="description" >LEARN HOW TO SKATE.<br>TO BE MORE CREATIVE.</h1>
+
+    <div class="btn signup signup-show"><span class="fa fa-envelope"></span>新規登録はこちら</div>
+    <div class="btn login login-show"><span class="fa fa-user"></span>ログイン</div>
+    <div class="btn facebook facebook-show"><span class="fa fa-facebook"></span>Facebookで登録</div>
+    <div class="btn twitter twitter-show"><span class="fa fa-twitter"></span>Twitterで登録</div>
+    <div class="btn instagram instagram-show"><span class="fa fa-instagram"></span>Instagramで登録</div>
+
 <% end %>
 
 
+<div class="lesson-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h2>Genres of videos</h2>
+        </div>
+        <div class="lessons">
+            <div class="lesson lesson-hover">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/html.png">
+                    <p>FLATGROUNDS</p>
+                </div>
+                <p class="text-contents">どんな場所でも磨くことのできるフラットグラウンドトリック、あなたに数々のアイデアを提供します。</p>
+            </div>
+            <div class="lesson lesson-hover">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+                    <p>LEDGES</p>
+                </div>
+                <p class="text-contents">レッジを使ったカーブトリック、クリエイティブな組み合わせをあなたに提案します。</p>
+            </div>
+            <div class="lesson lesson-hover">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/ruby.png">
+                    <p>RAILS</p>
+                </div>
+                <p class="text-contents">高難易度のハンドレールへ挑むあなたをサポートします。</p>
+            </div>
+            <div class="lesson lesson-hover">
+                <div class="lesson-icon">
+                    <img src="https://prog-8.com/images/html/advanced/php.png">
+                    <p>STAIRS</p>
+                </div>
+                <p class="text-contents">果敢にステアに挑むあなたへ、インスピレーションと鮮明なイメージをあなたに与えます。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-wrapper">
+    <div class="container">
+        <div class="heading">
+            <h1>FAQ</h1>
+        </div>
+        <div class="faq">
+          <ul id="faq-list">
+        <li class="faq-list-item">
+          <h3 class="question">PEBBLEはどんなスケーターに向いていますか？</h3>
+          <span>+</span>
+          <div class="answer">
+            <p>初心者から上級者まで、全スケーターが学習できるので、全スケートボーダー対象のサービスになります。</p>
+          </div>
+        </li>
+        <li class="faq-list-item">
+          <h3 class="question">PEBBLEを通して何ができますか？</h3>
+          <span>+</span>
+          <div class="answer">
+            <p>トリックの動画を通して、アイデアやコツを吸収しながら、イメージトレーニングを行うことができます。</p>
+          </div>
+        </li>
+        <li class="faq-list-item">
+          <h3 class="question">どのようなトリックが視聴可能ですか?</h3>
+          <span>+</span>
+          <div class="answer">
+            <p>洗練された、美しいトリックの全収録を心がけています。随時更新中になります。</p>
+          </div>
+        </li>
+      </ul>
+        </div>
+    </div>
+</div>
+
+<div class="message-wrapper">
+    <div class="container">
+        <div class="heading">
+            <p>PEBBLEはオンラインスケートボード学習サービスです。<br>初心者、上級者問わず、数々のトッププロのトリックの動画に出会い、理想に近付くサポートをします。</p>
+            <h2>さぁ、あなたも憧れのスケーターに近づきませんか?</h2>
+            <h3 id="tagline">Let's learn how to skate ,  to be an ideal skateboarder!</h3>
+        </div>
+        <div class="btn message signup-show">START</div>
+    </div>
+</div>
 
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-<!--<script src="/assets/slick.min.js"></script>-->
 
-<script type="text/javascript">
-$(function() {
-    $('.center-item').slick({
-          infinite: false,
-          dots:true,
-          slidesToShow: 1,
-          centerMode: true,
-          centerPadding:'130px',
-          variableWidth: true,
-          autoplay:true,
-          arrows: true,
-          initialSlide: 2,
-          infinite: true,
-              responsive: [{
-               breakpoint: 480,
-                    settings: {
-                         slidesToShow: 1,
-                         centerMode: true,
-                         centerPadding:'74px',
-                         variableWidth: true,
-
-               }
-          }]
-     });
-});
-</script>
-
-<script type="text/javascript">
-$(function(){
-    const setImg = '#viewer';
-    const fadeSpeed = 1000;
-    const switchDelay = 3000;
-
-    $(setImg).children('img').css({opacity:'0'});
-    $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
-
-    setInterval(function(){
-        $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
-    },switchDelay);
-});
-</script>
-
-
-
-<script>
-$('h1').fadeIn(3000);
-</script>
-
-
-<script>
-$('p').fadeIn(4500);
-</script>
+<% end %>

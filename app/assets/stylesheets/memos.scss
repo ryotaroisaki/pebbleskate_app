@@ -6,6 +6,81 @@
 }
 
 .memo {
-    background-color:  white;
-      
+
+    color: rgba(0, 0, 0, 0.52);
+    background-color:  black;
+    height: 100px;
+    font-size: 30px;
+
+}
+
+/* cover */
+.cover {
+  margin-top: -20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 400px;
+  background: url("/images/cover-skate.jpg") center center no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  display: none;
+  .cover-inner {
+    height: 100%;
+    margin: auto;
+    display: table;
+    .cover-contents {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      position: relative;
+      h1 {
+       margin: 0 0 20px 0;
+       color: #fff;
+       font-weight: bold;
+       letter-spacing: 0.15em;
+       display: none;
+     }
+     .transparent{
+       font-size:40px;
+       font-weight: inherit;
+       opacity: 0.7;
+     }
+    }
+  }
+}
+
+
+
+
+
+
+.relative{
+  position: relative;
+  display: none;
+}
+
+.absolute{
+  font-weight: bold;
+  position: absolute;
+  left: 200px;
+  top: 300px;
+  color: white;
+  display: none;
+  z-index: 99999;
+
+}
+
+.trick {
+  padding: 8px 24px;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.79);
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
 }
