@@ -69,25 +69,6 @@ footer {
   display: none;
 }
 
-.absolute{
-  font-weight: bold;
-  position: absolute;
-  left: 450px;
-  top: 300px;
-  color: white;
-  opacity: 0.9;
-  display: none;
-  z-index: 100;
-
-}
-
-.buttonSpeed{
-  left: 680px;
-  top: 400px;
-  position: absolute;
-  display: none;
-  z-index: 100;
-}
 
 
 /* 文字の動きのあるフェードイン */
@@ -188,6 +169,16 @@ footer {
 }
 
 
+/* footer */
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 46px;
+}
+
+
 
 @media screen and (max-width:640px){
   .wrap {
@@ -197,14 +188,4 @@ footer {
 
 .text{
   color: black;
-}
-
-
-/* footer */
-
-.bottom{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
 }

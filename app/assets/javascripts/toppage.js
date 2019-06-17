@@ -87,9 +87,9 @@ $(function(){
 // フェードイン
 $(function(){
 
-  $('.absolute').fadeIn(3000);
+  $('.toppage_caption').fadeIn(3000);
 
-  $('.buttonSpeed').fadeIn(4500);
+  $('.start_button').fadeIn(4500);
 
   $('.description').fadeIn(5500);
 

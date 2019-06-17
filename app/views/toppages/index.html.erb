@@ -206,7 +206,7 @@
     </div>
 
     <div class="signup-modal-wrapper" id="signup-modal">
-        <div class="moda">
+        <div class="moda2">
             <div class="close-modal">
                 <i class="fa fa-2x fa-times"></i>
             </div>
@@ -266,6 +266,7 @@
 
 
 <% content_for :cover do %>
+
     <div id="viewer">
         <img src="/images/cover-skate2.jpg" width="100%" height="800"/>
         <img src="/images/clip.png" width="100%" height="800" />
@@ -275,15 +276,21 @@
         <img src="/images/cover-skate5.jpg" width="100%" height="800" />
     </div>
 
-    <h1 class="absolute">スキルアップを目指す全スケートボーダーへ</h1>
-    <p class="buttonSpeed"><%= link_to 'PEBBLE SKATE CLIPSを始める', login_path, class: 'btn btn-success btn-lg' %></p>
 
+    <h1 class="toppage_caption">スキルアップを目指す全スケートボーダーへ</h1>
+    <div class="center">
+      <p class ="start_button">
+    <%= link_to 'PEBBLE SKATE CLIPSを始める', login_path, class: 'btn btn-success btn-lg' %>
+     </p>
+    </div>
  <%# <%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn register' %>
 
     <h1 class ="description" >LEARN HOW TO SKATE.<br>TO BE MORE CREATIVE.</h1>
 
     <div class="btn signup signup-show"><span class="fa fa-envelope"></span>新規登録はこちら</div>
+    <div class="center">
     <div class="btn login login-show"><span class="fa fa-user"></span>ログイン</div>
+    </div>
     <div class="btn facebook facebook-show"><span class="fa fa-facebook"></span>Facebookで登録</div>
     <div class="btn twitter twitter-show"><span class="fa fa-twitter"></span>Twitterで登録</div>
     <div class="btn instagram instagram-show"><span class="fa fa-instagram"></span>Instagramで登録</div>
