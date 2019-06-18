@@ -1,4 +1,6 @@
 class ToppagesController < ApplicationController
+
+
   def index
     @user = User.new
     @videos = Video.all
