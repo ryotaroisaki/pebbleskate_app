@@ -190,3 +190,8 @@ footer {
 .text{
   color: black;
 }
+
+.nav_profile_image {
+  width: 20px;
+  height: 20px;
+}
