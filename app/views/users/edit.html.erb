@@ -1,0 +1,30 @@
+<div class="main users-edit">
+  <div class="container">
+    <div class="form-heading text-center">アカウント編集</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+
+
+
+        <%= form_for(@user) do |f| %>
+          <%= f.label :name, 'ユーザー名' %>
+          <%= f.text_field :name %>
+
+          <%= f.label :image_name, 'プロフィール画像' %>
+          <%= f.file_field :image_name %>
+
+          <%= f.label :content, 'メール' %>
+          <%= f.text_field :email %>
+
+          <%= f.submit '更新' %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

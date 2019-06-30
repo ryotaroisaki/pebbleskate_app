@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_12_094701) do
+ActiveRecord::Schema.define(version: 2019_06_22_091353) do
 
   create_table "connections", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "trick_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2019_05_12_094701) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_name"
   end
 
   create_table "videos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

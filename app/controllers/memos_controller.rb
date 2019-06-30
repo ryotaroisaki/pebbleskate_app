@@ -5,6 +5,8 @@ class MemosController < ApplicationController
 
   def index
       @memos = Memo.all.order('created_at DESC').page(params[:page])
+      @memo = current_user.memos.build
+      @user = current_user
   end
 
   def new
@@ -17,7 +19,7 @@ class MemosController < ApplicationController
     @memo = current_user.memos.build(memo_params)
     if @memo.save
       flash[:success] = 'メッセージを投稿しました。'
-      redirect_to @user
+      redirect_back(fallback_location: root_path)
     else
       @memos = current_user.memos.order('created_at DESC').page(params[:page])
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'

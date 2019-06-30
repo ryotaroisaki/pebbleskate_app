@@ -1,0 +1,20 @@
+<div class="main users-index">
+  <div class="container_post">
+    <ul class="user-tabs">
+      <li class><%= link_to "投稿", user_path(current_user.id) %></li>
+      <li class="active"><%= link_to "ユーザー", users_path %></li>
+      <li class><%= link_to "フィード", memos_path %></li>
+    </ul>
+
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <div class="user-left">
+          <img src="<%= "/user_images/#{user.image_name}" %>">
+        </div>
+        <div class="user-right">
+          <%= link_to user.name, user_path(user.id) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

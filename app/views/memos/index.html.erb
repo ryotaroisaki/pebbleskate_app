@@ -1,3 +1,59 @@
-<div class= "text-center" ><h1>HOW TO</h1></div>
+<div class="post-modal-wrapper" id="post-modal">
+    <div class="moda">
+        <div class="close-modal">
+            <i class="fa fa-2x fa-times"></i>
+        </div>
 
-<%= render 'memos/memos', memos: @memos %> 
+    <div id="post-form">
+        <h1><span class="fa fa-pencil">新規投稿</span></h1>
+
+        <%= form_for(@memo) do |f| %>
+            <div class="form-group">
+                <%= f.text_field :trick, class: 'form-control', :placeholder => "トリック名" %>
+            </div>
+
+            <div class="form-group">
+                <%= f.text_area :content, class: 'form-control', rows: 4, :placeholder => "コツ" %>
+            </div>
+    </div>
+            <div class = "text-center">
+                <%= f.submit 'POST', id: 'post-submit-btn' %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="main user-show">
+    <div class="container_post">
+      <ul class="user-tabs">
+        <li class><%= link_to("投稿", user_path(@current_user.id)) %></li>
+        <li class><%= link_to "ユーザー", users_path %></li>
+        <li class="active"><%= link_to "フィード", memos_path %></li>
+      </ul>
+
+        <% @memos.each do |memo| %>
+          <div class="posts-index-item">
+            <div class="post-left">
+               <img src="<%= "/user_images/#{memo.user.image_name}" %>">
+               <div class ="name"><%= link_to memo.user.name, user_path(memo.user) %></div>
+            </div>
+            <div class="post-right">
+              <div class="post-user-name">
+                <%= link_to memo.trick, user_path(memo.user) %>
+              </div>
+              <%= link_to memo.content, user_path(memo.user) %>
+            </div>
+             <div class="delete-memo">
+              <% if current_user == memo.user %>
+                  <%= link_to memo, method: :delete, data: { confirm: "You sure?" } do %> <span class="glyphicon glyphicon-trash color-black" style="font-size: 25px"></span><% end %>
+              <% end %>
+              <% if current_user == memo.user %>
+                  <%= link_to edit_memo_path(memo.id) do %> <span class="glyphicon glyphicon-pencil color-black" style="font-size: 25px"></span><% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+        <div><span class="fa fa-plus post-show" style="font-size: 30px"></span></div>
+    </div>
+</div>

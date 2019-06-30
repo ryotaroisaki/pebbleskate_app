@@ -84,3 +84,53 @@
     text-decoration: none;
   }
 }
+
+.post-modal-wrapper{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+#post-form{
+  width: 100%;
+  h1 {
+    color: #5f5d60;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  input {
+    width: 320px;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    font-size: 12px;
+    padding: 12px 12px;
+    border: 1px solid #d0d5d8;
+    border-radius: 5px;
+  }
+  textarea {
+    width: 320px;
+    margin-left: 68px;
+    margin-bottom: -9px;
+    margin: 0 auto;
+    font-size: 12px;
+    padding: 12px 12px;
+    border: 1px solid #d0d5d8;
+    border-radius: 5px;
+  }
+}
+
+#post-submit-btn {
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: rgba(#153894, 0.79);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}

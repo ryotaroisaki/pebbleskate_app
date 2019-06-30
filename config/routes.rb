@@ -54,38 +54,41 @@ Rails.application.routes.draw do
   get 'toppages/index'
 
   root to: "toppages#index"
-  
-  
+
+
+
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  
+
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :new, :create] do
+  resources :users, only: [:index, :show, :new, :create, :update, :edit] do
   member do
       get :library
     end
   end
-  
-  resources :memos, only: [:index, :new, :create, :destroy, :edit, :update] 
-  
-  
+
+
+  resources :memos, only: [:index, :new, :create, :destroy, :edit, :update]
+
+
   get 'option', to: 'genres#option'
-  
+
   resources :genres, only: [:index, :show, :new, :create, :destroy] do
   member do
       get :select
       post :trickcreate
     end
   end
-  
+
   resources :tricks, only: [:show, :new, :create, :destroy]
-  
+
   resources :videos, only: [:index, :show, :new, :create, :destroy]
-  
+
   resources :relationships, only: [:new, :create, :destroy]
-  
+
   resources :favorites, only: [:create, :destroy]
-  
+
    get 'add', to: 'memos#new'
 end
