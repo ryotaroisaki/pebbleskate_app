@@ -23,6 +23,7 @@
       top: 0;
       left: 0;
       position: absolute;
+      object-fit: cover;
   }
 
 
@@ -405,6 +406,7 @@
       top: 0;
       left: 0;
       position: absolute;
+      object-fit: cover;
   }
 
 
@@ -486,15 +488,15 @@
   }
 
   .facebook {
-    @include sns($facebookcolor, 20%);
+    @include sns($facebookcolor, 15%);
   }
 
   .twitter {
-    @include sns($twittercolor, 41%);
+    @include sns($twittercolor, 38%);
   }
 
   .instagram {
-    @include sns($instagramcolor, 62%);
+    @include sns($instagramcolor, 61%);
   }
 
   .description{
@@ -781,6 +783,7 @@
       top: 0;
       left: 0;
       position: absolute;
+      object-fit: cover;
   }
 
 
