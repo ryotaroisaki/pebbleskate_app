@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
  before_action :require_user_logged_in
- 
+
   def index
     @genres = Genre.search(params[:search])
   end
@@ -23,7 +23,7 @@ class GenresController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = '新ジャンルの登録に失敗しました。'
-      render :root_url
+      render :new
     end
   end
 
@@ -46,12 +46,10 @@ class GenresController < ApplicationController
     flash[:success] = '新トリックを登録しました。'
       redirect_to root_url
     else
-      flash.now[:danger] = '新トリックの登録に失敗しました。'
-      render :root_url
+      flash[:danger] = '新トリックの登録に失敗しました。'
+      redirect_to select_genre_path
     end
   end
-
-
 
   private
 

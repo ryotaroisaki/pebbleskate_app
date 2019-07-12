@@ -21,7 +21,7 @@ class TricksController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = 'トリックの登録に失敗しました。'
-      render :root_url
+      render :new
     end
   end
 

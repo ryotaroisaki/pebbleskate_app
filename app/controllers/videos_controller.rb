@@ -3,7 +3,6 @@ class VideosController < ApplicationController
 
 
   def index
-
   end
 
   def show
@@ -19,13 +18,15 @@ class VideosController < ApplicationController
     relationship = Relationship.new(video_id: "video.id", genre_id: "video.name")
     connection = Connection.new(video_id: "video.id", trick_id: "video.name")
 
+    relationship.save
+    connection.save
 
-    if video.save && relationship.save && connection.save
-      flash[:success] = '動画をジャンルに紐付けて投稿しました'
+    if video.save
+      flash[:success] = '動画をジャンルを投稿しました'
       redirect_to root_url
     else
       flash[:danger] = '動画の投稿に失敗しました'
-      redirect_to root_url
+      redirect_to new_video_path
     end
   end
 

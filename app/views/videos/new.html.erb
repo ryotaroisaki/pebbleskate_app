@@ -1,11 +1,9 @@
 <div class="row">
     <div class="col-xs-12 col-lg-offset-3 col-lg-6">
         <div class="panel panel-default">
-
             <div class="panel-heading">動画を追加する</div>
             <div class="panel-body">
-                <%= form_for(@video) do |f| %>
-
+                <%= form_for(@video) do |f| %>         
                     <div class="form-group">
                         <%= f.label :iframe_url, 'Iframe_url' %>
                         <%= f.text_field :iframe_url, class: 'form-control' %>
@@ -33,7 +31,7 @@
 
                     <div class="form-group">
                         <%= f.label :video_type, 'Video_type' %>
-                        <%= f.password_field :video_type, class: 'form-control' %>
+                        <%= f.text_field :video_type, class: 'form-control' %>
                     </div>
 
                     <div>
@@ -47,7 +45,6 @@
                     </div>
 
                     <%= f.submit 'POST', class: 'btn btn-success btn-block' %>
-
                 <% end %>
             </div>
         </div>
