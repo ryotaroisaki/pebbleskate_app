@@ -18,18 +18,18 @@ class MemosController < ApplicationController
     @user = current_user
     @memo = current_user.memos.build(memo_params)
     if @memo.save
-      flash[:success] = 'メッセージを投稿しました。'
+      flash[:success] = 'メモを追加しました。'
       redirect_back(fallback_location: root_path)
     else
       @memos = current_user.memos.order('created_at DESC').page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = 'メモの追加に失敗しました。'
       render 'memos/new'
     end
   end
 
   def destroy
     @memo.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = 'メモを削除しました。'
     redirect_back(fallback_location: root_path)
   end
 
@@ -41,10 +41,10 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
 
     if @memo.update(memo_params)
-      flash[:success] = 'Memo は正常に更新されました'
+      flash[:success] = 'メモは正常に更新されました'
       redirect_to current_user
     else
-      flash.now[:danger] = 'Memo は更新されませんでした'
+      flash.now[:danger] = 'メモは更新されませんでした'
       render :edit
     end
   end

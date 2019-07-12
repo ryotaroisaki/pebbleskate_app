@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
   before_action :require_user_logged_in
 
+
   def index
 
   end
@@ -14,15 +15,18 @@ class VideosController < ApplicationController
   end
 
   def create
-
     video = Video.new(video_params)
-    video.save
-
     relationship = Relationship.new(video_id: "video.id", genre_id: "video.name")
-    relationship.save
+    connection = Connection.new(video_id: "video.id", trick_id: "video.name")
 
-    flash[:success] = '動画をジャンルに紐つけて投稿しました'
-    redirect_to root_url
+
+    if video.save && relationship.save && connection.save
+      flash[:success] = '動画をジャンルに紐付けて投稿しました'
+      redirect_to root_url
+    else
+      flash[:danger] = '動画の投稿に失敗しました'
+      redirect_to root_url
+    end
   end
 
 

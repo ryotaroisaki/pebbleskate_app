@@ -4,6 +4,37 @@
 
 @import "_color";
 
+@mixin submit-btn($color){
+  display: inline-block;
+  padding: 14px 140px;
+  background-color: $color;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.submit-btn {
+ @include submit-btn(#5dca88);
+}
+
+.login-submit-btn{
+ @include submit-btn(#d55555);
+}
+
+.facebook-submit-btn {
+  @include submit-btn($facebookcolor);
+}
+
+.twitter-submit-btn {
+  @include submit-btn($twittercolor);
+}
+
+.instagram-submit-btn{
+  @include submit-btn($instagramcolor);
+}
+
 
 // スマホスポンシブ
 
@@ -66,7 +97,7 @@
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    width: 300px;
+    width: 325px;
     height: 45px;
     display: none;
     z-index: 100;
@@ -240,16 +271,7 @@
   }
 
 
-  #submit-btn {
-    display: inline-block;
-    padding: 14px 140px;
-    background-color: #5dca88;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    margin: 10px auto;
-    cursor: pointer;
-  }
+
 
   .lesson-wrapper {
     position:absolute;
@@ -444,7 +466,7 @@
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    width: 300px;
+    width: 325px;
     height: 45px;
     display: none;
     z-index: 100;
@@ -477,27 +499,31 @@
   }
 
   // SNSボタン
-  @mixin sns($color,$left){
+  @mixin sns($color, $left){
     position: absolute;
     top: 600px;
+    right: 0;
+    left: $left;
+    bottom: 0;
+    margin: 0 auto;
     width: 180px;
     height: 40px;
     z-index: 100;
     background-color: $color;
-    left: $left;
   }
 
   .facebook {
-    @include sns($facebookcolor, 15%);
+    @include sns($facebookcolor, -400px);
   }
 
   .twitter {
-    @include sns($twittercolor, 38%);
+    @include sns($twittercolor, 0);
   }
 
   .instagram {
-    @include sns($instagramcolor, 61%);
+    @include sns($instagramcolor, 400px);
   }
+
 
   .description{
     width: 100%;
@@ -615,16 +641,6 @@
   }
 
 
-  #submit-btn {
-    display: inline-block;
-    padding: 14px 140px;
-    background-color: #5dca88;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    margin: 10px auto;
-    cursor: pointer;
-  }
 
   .lesson-wrapper {
     position:absolute;
@@ -821,8 +837,8 @@
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    width: 300px;
-    height: 40px;
+    width: 325px;
+    height: 45px;
     display: none;
     z-index: 100;
   }
@@ -854,26 +870,29 @@
   }
 
   // SNSボタン
-  @mixin sns($color,$left){
+  @mixin sns($color, $left){
     position: absolute;
-    top: 600px;
+    top: 320px;
+    right: 0;
+    left: $left;
+    bottom: 0;
+    margin: auto;
     width: 180px;
     height: 40px;
     z-index: 100;
     background-color: $color;
-    left: $left;
   }
 
   .facebook {
-    @include sns($facebookcolor,550px);
+    @include sns($facebookcolor, -400px);
   }
 
   .twitter {
-    @include sns($twittercolor, 756px);
+    @include sns($twittercolor, 0);
   }
 
   .instagram {
-    @include sns($instagramcolor,956px);
+    @include sns($instagramcolor, 400px);
   }
 
   .description{
@@ -992,16 +1011,6 @@
   }
 
 
-  #submit-btn {
-    display: inline-block;
-    padding: 14px 140px;
-    background-color: #5dca88;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    margin: 10px auto;
-    cursor: pointer;
-  }
 
   .lesson-wrapper {
     position:absolute;

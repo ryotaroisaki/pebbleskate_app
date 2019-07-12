@@ -152,7 +152,7 @@
 <% else %>
 
     <div class="facebook-modal-wrapper" id="facebook-modal">
-        <div class="moda">
+        <div class="moda2">
             <div class="close-modal">
                 <i class="fa fa-2x fa-times"></i>
             </div>
@@ -160,17 +160,32 @@
         <div id="facebook-form">
 
             <h1><span class="fa fa-facebook"></span>Facebookで登録</h1>
-            <form action="#">
-                <input class="form-control" type="text" placeholder="Facebookメールアドレス">
-                <input class="form-control" type="password" placeholder="パスワード">
-                <div id="submit-btn">新規登録</div>
-            </form>
+            <%= form_for(@user) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, class: 'form-control', :placeholder => "お名前" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.email_field :email, class: 'form-control', :placeholder => "メールアドレス" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "パスワード(確認)"%>
+                </div>
         </div>
+                <div class = "text-center">
+                    <%= f.submit '新規登録', class: 'facebook-submit-btn' %>
+                </div>
+            <% end %>
         </div>
     </div>
 
     <div class="twitter-modal-wrapper" id="twitter-modal">
-        <div class="moda">
+        <div class="moda2">
             <div class="close-modal">
                 <i class="fa fa-2x fa-times"></i>
             </div>
@@ -178,17 +193,32 @@
         <div id="twitter-form">
 
             <h1><span class="fa fa-twitter"></span>Twitterで登録</h1>
-            <form action="#">
-                <input class="form-control" type="text" placeholder="Twitterメールアドレス">
-                <input class="form-control" type="password" placeholder="パスワード">
-                <div id="submit-btn">新規登録</div>
-            </form>
+            <%= form_for(@user) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, class: 'form-control', :placeholder => "Twitterユーザー名" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.email_field :email, class: 'form-control', :placeholder => "Twitterメールアドレス" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "パスワード(確認)"%>
+                </div>
         </div>
+                <div class = "text-center">
+                    <%= f.submit '新規登録', class: 'twitter-submit-btn' %>
+                </div>
+            <% end %>
         </div>
     </div>
 
     <div class="instagram-modal-wrapper" id="instagram-modal">
-        <div class="moda">
+        <div class="moda2">
             <div class="close-modal">
                 <i class="fa fa-2x fa-times"></i>
             </div>
@@ -196,12 +226,27 @@
         <div id="instagram-form">
 
             <h1><span class="fa fa-instagram"></span>Instagramで登録</h1>
-            <form action="#">
-                <input class="form-control" type="text" placeholder="Instagramメールアドレス">
-                <input class="form-control" type="password" placeholder="パスワード">
-                <div id="submit-btn">新規登録</div>
-            </form>
+            <%= form_for(@user) do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :name, class: 'form-control', :placeholder => "Instagramユーザー名" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.email_field :email, class: 'form-control', :placeholder => "Instagramメールアドレス" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "パスワード(確認)"%>
+                </div>
         </div>
+                <div class = "text-center">
+                    <%= f.submit '新規登録', class: 'instagram-submit-btn' %>
+                </div>
+            <% end %>
         </div>
     </div>
 
@@ -232,7 +277,7 @@
                 </div>
         </div>
                 <div class = "text-center">
-                    <%= f.submit '新規登録', id: 'submit-btn' %>
+                    <%= f.submit '新規登録', class: 'submit-btn' %>
                 </div>
             <% end %>
         </div>
@@ -257,7 +302,7 @@
                          <%= f.password_field :password, class: 'form-control', :placeholder => "パスワード"%>
                     </div>
              </div>
-                     <%= f.submit 'ログイン', id: 'submit-btn' %>
+                     <%= f.submit 'ログイン', class: 'login-submit-btn' %>
                  <% end %>
         </div>
     </div>
@@ -278,9 +323,7 @@
 
     <h1 class="toppage_caption">スキルアップを目指す全スケートボーダーへ</h1>
     <div class="center">
-      <p class ="start_button">
-          <%= link_to 'PEBBLE SKATE CLIPSを始める', login_path, class: 'btn btn-success btn-lg' %>
-      </p>
+          <%= link_to 'PEBBLE SKATE SERVICEを始める', login_path, class: 'start_button btn btn-success btn-lg' %>
     </div>
  <%# <%= link_to 'PEBBLE SKATE CLIPSを始める', signup_path, class: 'btn register' %>
 
@@ -305,28 +348,28 @@
         <div class="lessons">
             <div class="lesson lesson-hover">
                 <div class="lesson-icon">
-                    <img src="https://prog-8.com/images/html/advanced/html.png">
+                    <img src="../../images/flatground.jpg" width="200" height="200"">
                     <p>FLATGROUNDS</p>
                 </div>
                 <p class="text-contents">どんな場所でも磨くことのできるフラットグラウンドトリック、あなたに数々のアイデアを提供します。</p>
             </div>
             <div class="lesson lesson-hover">
                 <div class="lesson-icon">
-                    <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+                    <img src="../../images/ledge.jpg" width="200" height="200">
                     <p>LEDGES</p>
                 </div>
                 <p class="text-contents">レッジを使ったカーブトリック、クリエイティブな組み合わせをあなたに提案します。</p>
             </div>
             <div class="lesson lesson-hover">
                 <div class="lesson-icon">
-                    <img src="https://prog-8.com/images/html/advanced/ruby.png">
+                    <img src="../../images/rail.jpg" width="200" height="200">
                     <p>RAILS</p>
                 </div>
                 <p class="text-contents">高難易度のハンドレールへ挑むあなたをサポートします。</p>
             </div>
             <div class="lesson lesson-hover">
                 <div class="lesson-icon">
-                    <img src="https://prog-8.com/images/html/advanced/php.png">
+                    <img src="../../images/stairs.jpg" width="200" height="200">
                     <p>STAIRS</p>
                 </div>
                 <p class="text-contents">果敢にステアに挑むあなたへ、インスピレーションと鮮明なイメージをあなたに与えます。</p>

@@ -45,7 +45,7 @@
                         <%= f.label :names_ids, 'Tricks:' %>
                         <%= f.collection_check_boxes :name_ids, Trick.all, :id, :name %>
                     </div>
-                  
+
                     <%= f.submit 'POST', class: 'btn btn-success btn-block' %>
 
                 <% end %>

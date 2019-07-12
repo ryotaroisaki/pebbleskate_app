@@ -101,7 +101,8 @@
   h1 {
     color: #5f5d60;
     letter-spacing: 1px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   input {
     width: 320px;
@@ -133,4 +134,8 @@
   color: white;
   margin: 10px auto;
   cursor: pointer;
+}
+
+.post-show{
+  margin-bottom: 10px;
 }
