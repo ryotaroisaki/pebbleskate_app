@@ -1,13 +1,10 @@
 $(function() {
-
-  $('.post-show').click(function(){
-    $('#post-modal').fadeIn(300);
+  $('.memo-show').click(function(){
+    $('#memo-modal').fadeIn(300);
   });
 
 
   $('.close-modal').click(function() {
-      $('#post-modal').fadeOut();
+      $('#memo-modal').fadeOut();
   });
-
-}
-);
+});

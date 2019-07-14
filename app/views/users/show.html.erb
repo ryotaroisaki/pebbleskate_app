@@ -1,10 +1,10 @@
-<div class="post-modal-wrapper" id="post-modal">
+<div class="memo-modal-wrapper" id="memo-modal">
     <div class="moda">
         <div class="close-modal">
             <i class="fa fa-2x fa-times"></i>
         </div>
 
-    <div id="post-form">
+    <div id="memo-form">
         <h1><span class="fa fa-pencil">新規投稿</span></h1>
 
         <%= form_for(@memo) do |f| %>
@@ -17,14 +17,13 @@
             </div>
     </div>
             <div class = "text-center">
-                <%= f.submit 'POST', id: 'post-submit-btn' %>
+                <%= f.submit 'POST', id: 'memo-submit-btn' %>
             </div>
         <% end %>
     </div>
 </div>
 
-<div class="main user-show">
-  <div class="container_post">
+<div class="user-show">
     <div class="user">
       <img src="<%= "/user_images/#{@user.image_name}" %>">
 
@@ -42,12 +41,12 @@
     </ul>
 
     <% @user.memos.each do |memo| %>
-      <div class="posts-index-item">
-        <div class="post-left">
+      <div class="memos-index-item">
+        <div class="memo-left">
            <img src="<%= "/user_images/#{memo.user.image_name}" %>">
         </div>
-        <div class="post-right">
-          <div class="post-user-name">
+        <div class="memo-right">
+          <div class="memo-user-name">
             <%= link_to memo.trick, user_path(memo.user) %>
           </div>
           <%= link_to memo.content, user_path(memo.user) %>
@@ -63,9 +62,8 @@
       </div>
     <% end %>
     <% if current_user == @user %>
-        <div><span class="fa fa-plus post-show" style="font-size: 30px"></span></div>
+        <div><span class="fa fa-plus memo-show" style="font-size: 30px"></span></div>
     <% end %>
-  </div>
 </div>
 
 

@@ -60,5 +60,4 @@ class GenresController < ApplicationController
   def trick_params
     params.require(:trick).permit(:name)
   end
-
 end

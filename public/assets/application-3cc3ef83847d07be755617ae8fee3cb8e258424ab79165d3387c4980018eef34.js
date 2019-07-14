@@ -12185,18 +12185,15 @@ return jQuery;
 
 }).call(this);
 $(function() {
-
-  $('.post-show').click(function(){
-    $('#post-modal').fadeIn(300);
+  $('.memo-show').click(function(){
+    $('#memo-modal').fadeIn(300);
   });
 
 
   $('.close-modal').click(function() {
-      $('#post-modal').fadeOut();
+      $('#memo-modal').fadeOut();
   });
-
-}
-);
+});
 (function() {
 
 
@@ -15354,7 +15351,6 @@ $(()=> {
                          centerMode: true,
                          centerPadding:'74px',
                          variableWidth: true,
-
                }
           }]
      });
@@ -15391,4 +15387,9 @@ $(()=> {
 
 // require turbolinks
 
-;
+
+$(function(){
+  $('.text').children().addBack().contents().each(function() {
+    $(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="text-move">$&</span>'));
+  });
+});

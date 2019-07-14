@@ -22,7 +22,7 @@ class VideosController < ApplicationController
     connection.save
 
     if video.save
-      flash[:success] = '動画をジャンルを投稿しました'
+      flash[:success] = '動画を投稿しました'
       redirect_to root_url
     else
       flash[:danger] = '動画の投稿に失敗しました'
@@ -30,10 +30,8 @@ class VideosController < ApplicationController
     end
   end
 
-
-
  private
-
+ 
   def video_params
     params.require(:video).permit(:iframe_url, :trick, :skater, :instagram_url, :video_url, :video_type, :name, { :type_ids => [] }, :name, { :name_ids => [] })
   end

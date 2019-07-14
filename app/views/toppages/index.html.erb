@@ -51,19 +51,19 @@
              <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
             </div>
 
-            <div class= "details">
+            <div class="details">
               <p><%= video.trick %></p>
             </div>
 
-             <div class= "details">
+             <div class="details">
               <p><%= video.skater %></p>
             </div>
 
-             <div class= "details">
+             <div class="details">
               <p><%= video.instagram_url %></p>
             </div>
 
-            <div>
+            <div class="details">
                 <%= video.video_url %>
             </div>
           </div>
@@ -126,24 +126,23 @@
              <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
             </div>
 
-            <div class= "details">
+            <div class="details">
               <p><%= video.trick %></p>
             </div>
 
-             <div class= "details">
+             <div class="details">
               <p><%= video.skater %></p>
             </div>
 
-             <div class= "details">
+             <div class="details">
               <p><%= video.instagram_url %></p>
             </div>
 
-            <div>
+            <div class="details">
                 <%= video.video_url %>
             </div>
           </div>
         <% end %>
-
       </ul>
 
     </div>
@@ -177,7 +176,7 @@
                     <%= f.password_field :password_confirmation, class: 'form-control', :placeholder => "パスワード(確認)"%>
                 </div>
         </div>
-                <div class = "text-center">
+                <div class="text-center">
                     <%= f.submit '新規登録', class: 'facebook-submit-btn' %>
                 </div>
             <% end %>
@@ -340,87 +339,87 @@
 <% end %>
 
 
-<div class="lesson-wrapper">
-    <div class="container">
-        <div class="heading">
-            <h2>Genres of videos</h2>
-        </div>
-        <div class="lessons">
-            <div class="lesson lesson-hover">
-                <div class="lesson-icon">
-                    <img src="../../images/flatground.jpg" width="200" height="200"">
-                    <p>FLATGROUNDS</p>
-                </div>
-                <p class="text-contents">どんな場所でも磨くことのできるフラットグラウンドトリック、あなたに数々のアイデアを提供します。</p>
+    <div class="lesson-wrapper">
+        <div class="container">
+            <div class="heading">
+                <h2>Genres of videos</h2>
             </div>
-            <div class="lesson lesson-hover">
-                <div class="lesson-icon">
-                    <img src="../../images/ledge.jpg" width="200" height="200">
-                    <p>LEDGES</p>
+            <div class="lessons">
+                <div class="lesson lesson-hover">
+                    <div class="lesson-icon">
+                        <img src="../../images/flatground.jpg" width="200" height="200"">
+                        <p>FLATGROUNDS</p>
+                    </div>
+                    <p class="text-contents">どんな場所でも磨くことのできるフラットグラウンドトリック、あなたに数々のアイデアを提供します。</p>
                 </div>
-                <p class="text-contents">レッジを使ったカーブトリック、クリエイティブな組み合わせをあなたに提案します。</p>
-            </div>
-            <div class="lesson lesson-hover">
-                <div class="lesson-icon">
-                    <img src="../../images/rail.jpg" width="200" height="200">
-                    <p>RAILS</p>
+                <div class="lesson lesson-hover">
+                    <div class="lesson-icon">
+                        <img src="../../images/ledge.jpg" width="200" height="200">
+                        <p>LEDGES</p>
+                    </div>
+                    <p class="text-contents">レッジを使ったカーブトリック、クリエイティブな組み合わせをあなたに提案します。</p>
                 </div>
-                <p class="text-contents">高難易度のハンドレールへ挑むあなたをサポートします。</p>
-            </div>
-            <div class="lesson lesson-hover">
-                <div class="lesson-icon">
-                    <img src="../../images/stairs.jpg" width="200" height="200">
-                    <p>STAIRS</p>
+                <div class="lesson lesson-hover">
+                    <div class="lesson-icon">
+                        <img src="../../images/rail.jpg" width="200" height="200">
+                        <p>RAILS</p>
+                    </div>
+                    <p class="text-contents">高難易度のハンドレールへ挑むあなたをサポートします。</p>
                 </div>
-                <p class="text-contents">果敢にステアに挑むあなたへ、インスピレーションと鮮明なイメージをあなたに与えます。</p>
+                <div class="lesson lesson-hover">
+                    <div class="lesson-icon">
+                        <img src="../../images/stairs.jpg" width="200" height="200">
+                        <p>STAIRS</p>
+                    </div>
+                    <p class="text-contents">果敢にステアに挑むあなたへ、インスピレーションと鮮明なイメージをあなたに与えます。</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="faq-wrapper">
-    <div class="container">
-        <div class="heading">
-            <h1>FAQ</h1>
-        </div>
-        <div class="faq">
-          <ul id="faq-list">
-        <li class="faq-list-item">
-          <h3 class="question">PEBBLEはどんなスケーターに向いていますか？</h3>
-          <span>+</span>
-          <div class="answer">
-            <p>初心者から上級者まで、全スケーターが学習できるので、全スケートボーダー対象のサービスになります。</p>
-          </div>
-        </li>
-        <li class="faq-list-item">
-          <h3 class="question">PEBBLEを通して何ができますか？</h3>
-          <span>+</span>
-          <div class="answer">
-            <p>トリックの動画を通して、アイデアやコツを吸収しながら、イメージトレーニングを行うことができます。</p>
-          </div>
-        </li>
-        <li class="faq-list-item">
-          <h3 class="question">どのようなトリックが視聴可能ですか?</h3>
-          <span>+</span>
-          <div class="answer">
-            <p>洗練された、美しいトリックの全収録を心がけています。随時更新中になります。</p>
-          </div>
-        </li>
-      </ul>
+    <div class="faq-wrapper">
+        <div class="container">
+            <div class="heading">
+                <h1>FAQ</h1>
+            </div>
+            <div class="faq">
+              <ul id="faq-list">
+            <li class="faq-list-item">
+              <h3 class="question">PEBBLEはどんなスケーターに向いていますか？</h3>
+              <span>+</span>
+              <div class="answer">
+                <p>初心者から上級者まで、全スケーターが学習できるので、全スケートボーダー対象のサービスになります。</p>
+              </div>
+            </li>
+            <li class="faq-list-item">
+              <h3 class="question">PEBBLEを通して何ができますか？</h3>
+              <span>+</span>
+              <div class="answer">
+                <p>トリックの動画を通して、アイデアやコツを吸収しながら、イメージトレーニングを行うことができます。</p>
+              </div>
+            </li>
+            <li class="faq-list-item">
+              <h3 class="question">どのようなトリックが視聴可能ですか?</h3>
+              <span>+</span>
+              <div class="answer">
+                <p>洗練された、美しいトリックの全収録を心がけています。随時更新中になります。</p>
+              </div>
+            </li>
+          </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="message-wrapper">
-    <div class="container">
-        <div class="heading">
-            <p>PEBBLEはオンラインスケートボード学習サービスです。<br>初心者、上級者問わず、数々のトッププロのトリックの動画に出会い、理想に近付くサポートをします。</p>
-            <h3>We support skateboarders all around the world.</h3>
-            <h3 id="tagline">Let's learn how to skate ,  to be an ideal skateboarder.</h3>
+    <div class="message-wrapper">
+        <div class="container">
+            <div class="heading">
+                <p>PEBBLEはオンラインスケートボード学習サービスです。<br>初心者、上級者問わず、数々のトッププロのトリックの動画に出会い、理想に近付くサポートをします。</p>
+                <h3>We support skateboarders all around the world.</h3>
+                <h3 id="tagline">Let's learn how to skate ,  to be an ideal skateboarder.</h3>
+            </div>
+            <div class="btn message signup-show">START</div>
         </div>
-        <div class="btn message signup-show">START</div>
     </div>
-</div>
 
 
 

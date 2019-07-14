@@ -29,7 +29,7 @@ class MemosController < ApplicationController
 
   def destroy
     @memo.destroy
-    flash[:success] = 'メモを削除しました。'
+    flash[:danger] = 'メモを削除しました。'
     redirect_back(fallback_location: root_path)
   end
 

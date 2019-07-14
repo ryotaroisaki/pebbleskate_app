@@ -1,13 +1,36 @@
-<div class="icon text-center">
-    <aside class="col-md-12">
+<div class="row">
+    <div class="col-xs-12 col-lg-offset-3 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">新規投稿</div>
+            <div class="panel-body">
+
+
         <%= form_for(@memo) do |f| %>
+
+        <% if @memo.errors.any? %>
+          <div class="alert alert-warning">
+            <div id="error_explanation">
+              <ul>
+                <% @memo.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+
             <div class="form-group">
-                <p>TRICK</p>
+                <%= f.label :trick, 'トリック' %>
                 <%= f.text_area :trick, class: 'form-control', rows: 5 %>
-                <p>CONTENT</p>
+            <div class="form-group">
+                <%= f.label :content, 'コツ' %>
                 <%= f.text_area :content, class: 'form-control', rows: 5 %>
             </div>
             <%= f.submit 'Save', class: 'btn btn-primary btn-block' %>
         <% end %>
-    </aside>
+
+
+            </div>
+        </div>
+    </div>
 </div>

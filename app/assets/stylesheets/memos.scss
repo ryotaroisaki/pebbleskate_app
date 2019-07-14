@@ -85,7 +85,7 @@
   }
 }
 
-.post-modal-wrapper{
+.memo-modal-wrapper{
   display: none;
   position: fixed;
   top: 0;
@@ -96,7 +96,7 @@
   z-index: 100;
 }
 
-#post-form{
+#memo-form{
   width: 100%;
   h1 {
     color: #5f5d60;
@@ -125,7 +125,7 @@
   }
 }
 
-#post-submit-btn {
+#memo-submit-btn {
   display: inline-block;
   padding: 14px 140px;
   background-color: rgba(#153894, 0.79);
@@ -136,6 +136,6 @@
   cursor: pointer;
 }
 
-.post-show{
+.memo-show{
   margin-bottom: 10px;
 }

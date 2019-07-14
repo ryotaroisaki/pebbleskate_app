@@ -120,7 +120,6 @@ $(()=> {
                          centerMode: true,
                          centerPadding:'74px',
                          variableWidth: true,
-
                }
           }]
      });

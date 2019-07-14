@@ -55,20 +55,20 @@
                 <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
             </div>
 
-            <div class= "details">
+            <div class="details">
                 <p><%= video.trick %></p>
             </div>
 
-            <div class= "details">
+            <div class="details">
                 <p><%= video.skater %></p>
             </div>
 
-            <div class= "details">
-                <p><%= video.instagram_url %></p>
+            <div class="details">
+            <p><%= video.instagram_url %></p>
             </div>
 
-            <div>
-                <%= video.video_url %>
+            <div class="details">
+                <p><%= video.video_url %></p>
             </div>
         </div>
         <% end %>
@@ -132,105 +132,22 @@
                 <%= render 'favorites/like_button', video: video %><span class="badge"><%= video.favorites.count %></span>
             </div>
 
-            <div class= "details">
+            <div class="details">
                 <p><%= video.trick %></p>
             </div>
 
-            <div class= "details">
+            <div class="details">
                 <p><%= video.skater %></p>
             </div>
 
-            <div class= "details">
+            <div class="details">
                 <p><%= video.instagram_url %></p>
             </div>
 
-            <div>
+            <div class="details">
                 <%= video.video_url %>
             </div>
         </div>
         <% end %>
     </ul>
 </div>
-
-<div id="player"></div>
-
-<script>
-
-  $(function(){
-
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: 'O9NEMdjn8LE',
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
-
-// スクロールイベント
-window.addEventListener("scroll", function() {
-  // 画面内にプレイヤーがあるかを判定
-  if (window.scrollY < player.getIframe().offsetTop &&
-      window.scrollY + window.screen.height > player.getIframe().offsetTop + player.getIframe().offsetHeight) {
-    // 動画再生
-    player.playVideo()
-  } else {
-    // 動画停止
-    player.pauseVideo()
-  }
-})
-
-function onPlayerReady(event) {
-    loopStart();
-    player.playVideo();
-}
-function loopStart() {
-    player.seekTo(17);   // Start at 7 seconds
-}
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING) {
-        setTimeout(loopStart, 5000); // After 5 seconds, restart the loop
-    }
-}
-
-{}
-</script>
-
-
-
-
-
-<%# スリックスライダー %>
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-<!--<script src="/assets/slick.min.js"></script>-->
-
-<script type="text/javascript">
-$(function() {
-    $('.center-item').slick({
-          infinite: false,
-          dots:true,
-          slidesToShow: 1,
-          centerMode: true,
-          centerPadding:'130px',
-          variableWidth: true,
-          autoplay:true,
-          arrows: true,
-          initialSlide: 2,
-          infinite: true,
-              responsive: [{
-               breakpoint: 480,
-                    settings: {
-                         slidesToShow: 1,
-                         centerMode: true,
-                         centerPadding:'74px',
-                         variableWidth: true,
-
-               }
-          }]
-     });
-});
-</script>

@@ -4,22 +4,3 @@
 </div>
 
 <%= render 'videos/videos', videos: @liked %>
-
-
-
-<script>
-  $(function(){
-    $('.text').children().addBack().contents().each(function() {
-      $(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="text-move">$&</span>'));
-    });
-  });
-</script>
-
-
-<script>
-  $(function(){
-    $('.text').children().addBack().contents().each(function() {
-      $(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="text-move">$&</span>'));
-    });
-  });
-</script>

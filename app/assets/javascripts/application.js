@@ -14,3 +14,9 @@
 //= require jquery_ujs
 // require turbolinks
 //= require_tree .
+
+$(function(){
+  $('.text').children().addBack().contents().each(function() {
+    $(this).replaceWith($(this).text().replace(/(\S)/g, '<span class="text-move">$&</span>'));
+  });
+});
