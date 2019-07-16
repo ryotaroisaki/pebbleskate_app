@@ -3,9 +3,9 @@
         <div class="panel panel-default">
             <div class="panel-heading">動画を追加する</div>
             <div class="panel-body">
-                <%= form_for(@video) do |f| %>         
+                <%= form_for(@video) do |f| %>
                     <div class="form-group">
-                        <%= f.label :iframe_url, 'Iframe_url' %>
+                        <%= f.label :iframe_url, 'Iframe_url(注意:秒数指定のiframeURLのみ)' %>
                         <%= f.text_field :iframe_url, class: 'form-control' %>
                     </div>
 
